@@ -1,4 +1,4 @@
-// File: vars/createPrometheusMetrics.groovy
+// File: vars/PrometheusMetrics.groovy
 
 def call() {
     stage('Create Prometheus Metrics') {
