@@ -12,7 +12,7 @@ def call(String stageName, long startTime, long endTime, String buildResult) {
         build_stage_status{job="${jobName}", build="${buildId}", stage="${stageName}"} ${buildResult}
     """
 
-    writeFile(file: "${env.WORKSPACE}/prometheus_metrics.txt", text: metri, append: true)
+    writeFile(file: "${env.WORKSPACE}/prometheus_metrics.txt", text:metric, append: true)
 }
 
 
