@@ -17,8 +17,10 @@ def call(String stageName, long startTime, long endTime, String buildResult) {
     def fileExists = fileExists(filePath)
 
     if (fileExists) {
-        // Append the metric to the existing file
-        appendFile(file: filePath, text: metric)
+         // Append the metric to the existing file
+        def existingContent = fileRead(filePath)
+        writeFile(file: filePath, text: existingContent + metric)
+        
     } else {
         // Create a new file and write the metric content
         writeFile(file: filePath, text: metric)
